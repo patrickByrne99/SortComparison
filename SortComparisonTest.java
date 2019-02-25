@@ -30,6 +30,19 @@ public class SortComparisonTest
     @Test
     public void testEmpty()
     {
+        new SortComparison(); 
+		double[] testArray = {};
+		assertEquals("Test to see what happens when we have an empty array",0, testArray.length  );
+		testArray = SortComparison.insertionSort(testArray); 
+		assertEquals("Insertion empty test",0, testArray.length  );
+		testArray = SortComparison.quickSort(testArray); 
+		assertEquals("Quick empty test",0, testArray.length  );
+		testArray = SortComparison.mergeSortRecursive(testArray); 
+		assertEquals("Merge recursive empty test",0, testArray.length);
+		testArray = SortComparison.mergeSortIterative(testArray); 
+		assertEquals("Merge Iterative empty test",0, testArray.length );
+		testArray = SortComparison.selectionSort(testArray); 
+		assertEquals("Selection empty test",0, testArray.length);
     }
 
 
