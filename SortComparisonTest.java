@@ -161,9 +161,233 @@ public class SortComparisonTest
      *  Use this main method to create the experiments needed to answer the experimental performance questions of this assignment.
      *
      */
-    public static void main(String[] args)
-    {
-        //TODO: implement this method
-    }
+      public static void main(String[] args) {
+		speedOfInsertionSort();
+		speedOfQuickSort();
+		speedOfTestMergeSortRecursive();		
+		speedOfMergeSortIterative();
+		speedOfSelectionSort();
+	}
+
+	@Test
+	public static void speedOfInsertionSort() {
+		// test insertion sort
+		System.out.println("<<INSERTION SORT>>");
+		long startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(10, ""));
+		long finishTime = System.nanoTime();
+		System.out.println("10 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(100, ""));
+		finishTime = System.nanoTime();
+		System.out.println("100 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(1000, ""));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(1000, "Duplicates"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Duplicates: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(1000, "NearlyOrdered"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Nearly Ordered: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(1000, "Reverse"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Reversed: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.insertionSort(readFile(1000, "Sorted"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Sorted: " + (finishTime - startTime) * (0.000001) + " ms");
+	}
+
+	@Test
+	public static void speedOfQuickSort() {
+		System.out.println("<<QUICKSORT>>");
+		long startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(10, ""));
+		long finishTime = System.nanoTime();
+		System.out.println("10 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(100, ""));
+		finishTime = System.nanoTime();
+		System.out.println("100 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(1000, ""));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(1000, "Duplicates"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Duplicates: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(1000, "NearlyOrdered"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Nearly Ordered: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(1000, "Reverse"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Reversed: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.quickSort(readFile(1000, "Sorted"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Sorted: " + (finishTime - startTime) * (0.000001) + " ms");
+	}
+
+	@Test
+	public static void speedOfTestMergeSortRecursive() {
+		System.out.println("<<MERGESORT RECURSIVE>>");
+		long startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(10, ""));
+		long finishTime = System.nanoTime();
+		System.out.println("10 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(100, ""));
+		finishTime = System.nanoTime();
+		System.out.println("100 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(1000, ""));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(1000, "Duplicates"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Duplicates: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(1000, "NearlyOrdered"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Nearly Ordered: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(1000, "Reverse"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Reversed: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortRecursive(readFile(1000, "Sorted"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Sorted: " + (finishTime - startTime) * (0.000001) + " ms");
+	}
+
+	@Test
+	public static void speedOfMergeSortIterative() {
+		System.out.println("<<MERGESORT ITERATIVE>>");
+		long startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(10, ""));
+		long finishTime = System.nanoTime();
+		System.out.println("10 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(100, ""));
+		finishTime = System.nanoTime();
+		System.out.println("100 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(1000, ""));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(1000, "Duplicates"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Duplicates: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(1000, "NearlyOrdered"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Nearly Ordered: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(1000, "Reverse"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Reversed: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.mergeSortIterative(readFile(1000, "Sorted"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Sorted: " + (finishTime - startTime) * (0.000001) + " ms");
+	}
+
+	@Test
+	public static void speedOfSelectionSort() {
+		System.out.println("<<SELECTION SORT>>");
+		long startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(10, ""));
+		long finishTime = System.nanoTime();
+		System.out.println("10 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(100, ""));
+		finishTime = System.nanoTime();
+		System.out.println("100 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(1000, ""));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(1000, "Duplicates"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Duplicates: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(1000, "NearlyOrdered"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Nearly Ordered: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(1000, "Reverse"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Reversed: " + (finishTime - startTime) * (0.000001) + " ms");
+
+		startTime = System.nanoTime();
+		SortComparison.selectionSort(readFile(1000, "Sorted"));
+		finishTime = System.nanoTime();
+		System.out.println("1000 Numbers Sorted: " + (finishTime - startTime) * (0.000001) + " ms");
+	}
+
+	public static double[] readFile(int num, String type) {
+
+		double[] a = new double[num];
+
+		try {
+			BufferedReader br = new BufferedReader(
+					new FileReader("/Users/patrickbyrne/Desktop/assignment input data files" + type + num + ".txt"));
+
+			String line = br.readLine();
+
+			for (int i = 0; line != null; i++) {
+
+				a[i] = Double.parseDouble(line);
+
+				line = br.readLine();
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return a;
+	}
 
 }
